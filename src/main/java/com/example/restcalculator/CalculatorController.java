@@ -20,4 +20,62 @@ public class CalculatorController {
     ) {
         return a + b;
     }
+
+    /**
+     * Does division calculation
+     * @param a
+     * @param b
+     * @return quotient
+     */
+    @RequestMapping("/divide")
+    public int divide(
+            @RequestParam int a,
+            @RequestParam int b
+    ) {
+        return a / b;
+    }
+
+    /**
+     * Does multiply calculation
+     * @param a
+     * @param b
+     * @return product
+     */
+    @RequestMapping("/multiply")
+    public int multiply(
+            @RequestParam int a,
+            @RequestParam int b
+    ) {
+        return a * b;
+    }
+
+    /**
+     * Does subtraction calculation
+     * @param a
+     * @param b
+     * @return difference
+     */
+    @RequestMapping("/sub")
+    public int sub(
+            @RequestParam int a,
+            @RequestParam int b
+    ) {
+        return a - b;
+    }
+
+    /**
+     * Does power calculation
+     * @param a
+     * @param b
+     * @return a to the power of b
+     */
+    @RequestMapping("/pot")
+    public double pot(
+            @RequestParam int a,
+            @RequestParam int b
+    ) {
+        return Math.pow(a,b);
+    }
+
+
 }
