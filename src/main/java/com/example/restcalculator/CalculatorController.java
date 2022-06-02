@@ -77,5 +77,17 @@ public class CalculatorController {
         return Math.pow(a,b);
     }
 
+    /**
+     * Does absolute calculation
+     * @param a
+     * @return positive a
+     */
+    @RequestMapping("/absolute")
+    public int absolute(
+            @RequestParam int a,
+    ) {
+        return Math.abs(a);
+    }
+
 
 }
