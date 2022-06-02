@@ -84,10 +84,20 @@ public class CalculatorController {
      */
     @RequestMapping("/absolute")
     public int absolute(
-            @RequestParam int a,
+            @RequestParam int a
     ) {
         return Math.abs(a);
     }
 
-
+    /**
+     * Does sqrt calculation
+     * @param a
+     * @return sqrt of a
+     */
+    @RequestMapping("/sqrt")
+    public double sqrt(
+            @RequestParam int a
+    ) {
+        return Math.sqrt(a);
+    }
 }
