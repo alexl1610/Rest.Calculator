@@ -46,6 +46,17 @@ class CalculatorTest {
     }
 
     @Test
+    void divideTest() {
+        int a = 30;
+        int b = 5;
+        int expected = 6;
+
+        int result = calculator.divide(a, b);
+
+        assertEquals(expected, result);
+    }
+
+    @Test
     void divTestDividedZero() {
         int a = 10;
         int b = 0;
@@ -72,6 +83,16 @@ class CalculatorTest {
         int expected = 1;
 
         int result = calculator.abs(a);
+
+        assertEquals(expected, result);
+    }
+
+    @Test
+    void sqrtTest() {
+        int a = 25;
+        int expected = 5;
+
+        double result = calculator.sqrt(a);
 
         assertEquals(expected, result);
     }
