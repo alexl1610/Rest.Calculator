@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CalculatorController {
 
+    private Calculator calculator = new Calculator();
+
     /**
      * Does sum calculation
      * @param a
@@ -18,7 +20,7 @@ public class CalculatorController {
             @RequestParam int a,
             @RequestParam int b
     ) {
-        return a + b;
+        return calculator.sum(a,b);
     }
 
     /**
@@ -32,7 +34,7 @@ public class CalculatorController {
             @RequestParam int a,
             @RequestParam int b
     ) {
-        return a / b;
+        return calculator.divide(a,b);
     }
 
     /**
@@ -46,7 +48,7 @@ public class CalculatorController {
             @RequestParam int a,
             @RequestParam int b
     ) {
-        return a * b;
+        return calculator.multiply(a,b);
     }
 
     /**
@@ -60,7 +62,7 @@ public class CalculatorController {
             @RequestParam int a,
             @RequestParam int b
     ) {
-        return a - b;
+        return calculator.sub(a,b);
     }
 
     /**
@@ -69,12 +71,12 @@ public class CalculatorController {
      * @param b
      * @return a to the power of b
      */
-    @RequestMapping("/pot")
-    public double pot(
+    @RequestMapping("/pwr")
+    public double pwr(
             @RequestParam int a,
             @RequestParam int b
     ) {
-        return Math.pow(a,b);
+        return calculator.pwr(a,b);
     }
 
     /**
@@ -82,11 +84,11 @@ public class CalculatorController {
      * @param a
      * @return positive a
      */
-    @RequestMapping("/absolute")
-    public int absolute(
+    @RequestMapping("/abs")
+    public int abs(
             @RequestParam int a
     ) {
-        return Math.abs(a);
+        return calculator.abs(a);
     }
 
     /**
@@ -98,6 +100,6 @@ public class CalculatorController {
     public double sqrt(
             @RequestParam int a
     ) {
-        return Math.sqrt(a);
+        return calculator.sqrt(a);
     }
 }
